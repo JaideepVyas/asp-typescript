@@ -1,4 +1,4 @@
 bin/
 obj/
 .vs/
-d:\FlowDesk\flowdesk-client\node_modules
+node_modules/
