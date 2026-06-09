@@ -12,3 +12,11 @@ export interface RegisterRequest {
 export interface LoginResponse {
   token: string;
 }
+
+/* ✅ ADD THIS ONLY */
+
+export interface UserResponseDto {
+  id: string;
+  fullName: string;
+  email: string;
+}

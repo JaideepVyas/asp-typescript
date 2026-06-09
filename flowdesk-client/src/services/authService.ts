@@ -1,32 +1,19 @@
 import * as authApi from "../api/authApi";
-import {
+
+import type {
   LoginRequest,
+  LoginResponse,
   RegisterRequest,
 } from "../types/auth";
 
 export const login = async (
   data: LoginRequest
-) => {
-  const result = await authApi.login(data);
-
-  localStorage.setItem(
-    "token",
-    result.token
-  );
-
-  return result;
+): Promise<LoginResponse> => {
+  return await authApi.login(data);
 };
 
 export const register = async (
   data: RegisterRequest
 ) => {
   return await authApi.register(data);
-};
-
-export const logout = () => {
-  localStorage.removeItem("token");
-};
-
-export const isAuthenticated = () => {
-  return !!localStorage.getItem("token");
 };

@@ -1,5 +1,6 @@
 import axiosClient from "./axiosClient";
-import {
+
+import type {
   LoginRequest,
   LoginResponse,
   RegisterRequest,
@@ -22,6 +23,15 @@ export const register = async (
   const response = await axiosClient.post(
     "/users",
     data
+  );
+
+  return response.data;
+};
+
+// ✅ ADDED
+export const getUsers = async () => {
+  const response = await axiosClient.get(
+    "/users"
   );
 
   return response.data;
